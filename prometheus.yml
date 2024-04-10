@@ -1,0 +1,16 @@
+global:
+  ## interval at which scraping will take place
+  scrape_interval: 2m
+
+## jobs that it will scrape
+scrape_configs:
+  - job_name: 'prometheus'
+    static_configs:
+      - targets:
+        - 'localhost:9090'
+
+  - job_name: 'node'
+    static_configs:
+      - targets:
+        - '192.168.1.9:9100'
+
